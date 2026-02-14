@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://hopeandheal.vercel.app' // Replace with your actual domain
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hopeandhealphysio.com'
 
     // Define static routes
     const routes = [

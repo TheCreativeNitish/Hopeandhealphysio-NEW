@@ -21,8 +21,8 @@ export function GoogleReviewsSection({ showViewAllButton = true }: GoogleReviews
                 </div>
 
                 <div className="min-h-[400px]">
-                    {/* Elfsight Google Reviews Widget */}
-                    <div className="elfsight-app-dc30789c-92f3-48bd-9072-e34fcb5e95db" data-elfsight-app-lazy></div>
+                    {/* SociableKit Google Reviews Widget */}
+                    <div className="sk-ww-google-reviews" data-embed-id="25654661"></div>
                 </div>
 
                 {showViewAllButton && (
@@ -37,7 +37,7 @@ export function GoogleReviewsSection({ showViewAllButton = true }: GoogleReviews
                     </div>
                 )}
             </div>
-            <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
+            <Script src="https://widgets.sociablekit.com/google-reviews/widget.js" strategy="lazyOnload" />
         </section>
     )
 }

@@ -9,8 +9,10 @@ import { StickyCTA } from "@/components/sticky-cta"
 
 const inter = Inter({ subsets: ['latin'] })
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hopeandhealphysio.com'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hopeandheal.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Hope and Heal - Expert Physiotherapy & Rehabilitation Center in Bangalore',
     template: '%s | Hope and Heal Physiotherapy'
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hope and Heal - Expert Physiotherapy & Rehabilitation',
     description: 'Professional physiotherapy services for pain relief, injury recovery, and mobility restoration. Personalized treatment by certified physiotherapists.',
-    url: 'https://hopeandheal.vercel.app',
+    url: SITE_URL,
     siteName: 'Hope and Heal Physiotherapy',
     locale: 'en_IN',
     type: 'website',
@@ -67,8 +69,101 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Physiotherapy",
+    "@id": SITE_URL,
+    "name": "Hope and Heal Physiotherapy Clinic",
+    "alternateName": "Hope and Heal",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/images/logo.png`,
+    "image": `${SITE_URL}/images/og-image.jpg`,
+    "description": "Top-rated physiotherapy clinic in Bangalore offering specialized treatments for back pain, sports injuries, post-surgery recovery, and neurological rehab.",
+    "telephone": "+91-XXXXXXXXXX",
+    "email": "info@hopeandheal.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Street Address",
+      "addressLocality": "Bangalore",
+      "addressRegion": "Karnataka",
+      "postalCode": "560001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bangalore"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/hopeandheal",
+      "https://www.instagram.com/hopeandheal",
+      "https://www.linkedin.com/company/hopeandheal"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Physiotherapy Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Back Pain Treatment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sports Injury Rehabilitation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Post-Surgery Recovery"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Neurological Rehabilitation"
+          }
+        }
+      ]
+    }
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData)
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
