@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { JsonLd } from "@/components/json-ld"
+import { useAppointmentModal } from "@/contexts/appointment-modal-context"
 
 const services = [
     {
@@ -52,18 +53,27 @@ const services = [
 ]
 
 export function ServicesPageClient({ jsonLdData }: { jsonLdData: any }) {
+    const { openModal } = useAppointmentModal()
+
     return (
         <div className="min-h-screen flex flex-col bg-white">
             <JsonLd data={jsonLdData} />
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="bg-teal-900 text-white py-16 sm:py-20 lg:py-24 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-teal-800/50 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10 text-center">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Our Specialised Services</h1>
-                        <p className="text-lg sm:text-xl text-teal-100 max-w-2xl mx-auto">
+                {/* Hero Section - Modernized */}
+                <section className="relative overflow-hidden bg-gradient-to-br from-white via-teal-50/30 to-sky-50/40 py-16 sm:py-20 md:py-24 lg:py-28">
+                    {/* Subtle background glow */}
+                    <div className="pointer-events-none absolute inset-0">
+                        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-teal-200/20 via-sky-100/10 to-transparent blur-3xl" />
+                        <div className="absolute right-0 top-0 h-96 w-96 translate-x-1/3 -translate-y-1/3 rounded-full bg-gradient-to-bl from-teal-100/30 to-transparent blur-2xl" />
+                    </div>
+
+                    <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
+                        <h1 className="mb-6 animate-fade-in text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-700 via-teal-600 to-sky-600">
+                            Our Specialised Services
+                        </h1>
+                        <p className="mx-auto max-w-[650px] animate-fade-in text-base leading-relaxed text-slate-600 sm:text-lg" style={{ animationDelay: '0.1s' }}>
                             We offer a wide range of advanced physiotherapy treatments designed to relieve pain, restore mobility, and enhance your quality of life.
                         </p>
                     </div>
@@ -108,20 +118,30 @@ export function ServicesPageClient({ jsonLdData }: { jsonLdData: any }) {
                     </div>
                 </section>
 
-                {/* CTA Section */}
-                <section className="bg-teal-600 text-white py-16">
-                    <div className="mx-auto max-w-4xl px-4 text-center">
-                        <h2 className="text-3xl font-bold mb-4">Not sure which treatment you need?</h2>
-                        <p className="text-teal-100 text-lg mb-8">
+                {/* CTA Section - Enhanced */}
+                <section className="relative overflow-hidden bg-teal-600 py-16 sm:py-20 md:py-24 lg:py-28">
+                    {/* Gradient overlay */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800" />
+                    
+                    {/* Radial glow */}
+                    <div className="pointer-events-none absolute inset-0">
+                        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-400/10 blur-3xl" />
+                    </div>
+
+                    <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
+                        <h2 className="mb-5 text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-tight text-white">
+                            Not sure which treatment you need?
+                        </h2>
+                        <p className="mx-auto mb-8 max-w-[650px] text-base leading-relaxed text-teal-50 sm:text-lg">
                             Schedule a consultation with our experts. We will assess your condition and recommend the best treatment plan for you.
                         </p>
-                        <Link
-                            href="/appointment"
-                            className="inline-flex items-center gap-2 bg-white text-teal-700 px-8 py-3.5 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg"
+                        <button
+                            onClick={openModal}
+                            className="inline-flex touch-manipulation items-center gap-2 rounded-full bg-white px-8 py-3.5 font-bold text-teal-700 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 w-full max-w-[280px] justify-center sm:w-auto"
                         >
                             Book Consultation
                             <ArrowRight className="h-5 w-5" />
-                        </Link>
+                        </button>
                     </div>
                 </section>
             </main>

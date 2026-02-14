@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { AppointmentModalProvider } from "@/contexts/appointment-modal-context"
 import { Toaster } from "@/components/ui/toaster"
 import { AppointmentBookingModal } from "@/components/appointment-booking-modal"
+import { StickyCTA } from "@/components/sticky-cta"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +20,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Hope and Heal Team' }],
   creator: 'Hope and Heal',
   publisher: 'Hope and Heal',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   openGraph: {
     title: 'Hope and Heal - Expert Physiotherapy & Rehabilitation',
     description: 'Professional physiotherapy services for pain relief, injury recovery, and mobility restoration. Personalized treatment by certified physiotherapists.',
@@ -84,6 +80,7 @@ export default function RootLayout({
             {children}
             <AppointmentBookingModal />
             <Toaster />
+            <StickyCTA />
           </AppointmentModalProvider>
         </ThemeProvider>
       </body>
