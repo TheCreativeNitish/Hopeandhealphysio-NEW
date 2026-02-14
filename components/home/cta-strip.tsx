@@ -32,17 +32,14 @@ export function CTAStrip() {
             <Phone className="h-5 w-5 fill-white text-white" />
             <span>Call Us Today</span>
           </a>
-          <div className="relative group sm:w-auto w-full">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full opacity-50 blur group-hover:opacity-100 transition duration-500 group-hover:duration-200"></div>
-            <BookAppointmentButton
-              variant="primary"
-              size="lg"
-              className="relative w-full bg-slate-950 border border-white/10 text-white shadow-xl transition-all hover:bg-slate-900 sm:w-auto"
-            >
-              <Calendar className="h-5 w-5 mr-2 text-purple-400" />
-              Book Appointment
-            </BookAppointmentButton>
-          </div>
+          <BookAppointmentButton
+            variant="primary"
+            size="lg"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#e74c3c] px-8 py-4 text-base font-bold text-white shadow-[0_4px_14px_0_rgba(231,76,60,0.39)] transition-all duration-300 hover:scale-105 hover:shadow-[0_6px_20px_rgba(231,76,60,0.23)] sm:w-auto"
+          >
+            <Calendar className="h-5 w-5 text-white" />
+            Book Appointment
+          </BookAppointmentButton>
         </div>
 
         <p className="mt-8 text-sm text-white/80">
