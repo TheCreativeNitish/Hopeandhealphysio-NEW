@@ -209,11 +209,10 @@ export function HeroSection() {
             </div>
 
             {/* Heading */}
-            {/* Heading */}
-            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-[0.02em] mb-6 hero-title">
+            <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-[0.02em] mb-6 hero-title">
               <span className="block">GET THE BEST PHYSIOTHERAPY</span>
               <span className="block">TREATMENT AT "HOPE AND HEAL"</span>
-              <span className="block text-lg sm:text-2xl md:text-3xl mt-2 font-normal">- BANGALORE -</span>
+              <span className="block text-base sm:text-2xl md:text-3xl mt-2 font-normal">- BANGALORE -</span>
             </h1>
 
             {/* Description */}
