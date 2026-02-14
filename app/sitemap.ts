@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hopeandhealphysio.com'
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hopeandhealphysio.com'
 
     // Define static routes
     const routes = [
