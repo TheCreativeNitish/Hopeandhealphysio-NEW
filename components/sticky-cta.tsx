@@ -3,7 +3,7 @@
 export function StickyCTA() {
   const phoneNumber = '919513060525'
   const whatsappMessage = encodeURIComponent(
-    'Hello Hope and Heal Physiotherapy, I would like to book an appointment. Please assist me.'
+    'Hello Hope & Heal Physiotherapy Team,\nI would like to book an appointment or enquire about your physiotherapy services.\nPlease guide me with available slots and consultation details.\nThank you.'
   )
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`
   const callUrl = `tel:+${phoneNumber}`

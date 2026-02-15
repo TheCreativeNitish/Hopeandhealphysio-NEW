@@ -17,7 +17,7 @@ export function CTAStrip() {
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="https://wa.me/919513060525"
+            href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Physiotherapy%20Team%2C%0AI%20would%20like%20to%20book%20an%20appointment%20or%20enquire%20about%20your%20physiotherapy%20services.%0APlease%20guide%20me%20with%20available%20slots%20and%20consultation%20details.%0AThank%20you."
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-base font-bold text-white shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-105 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] sm:w-auto"

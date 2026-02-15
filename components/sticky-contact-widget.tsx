@@ -8,7 +8,7 @@ export function StickyContactWidget() {
       {/* Mobile: WhatsApp Only - Left Bottom (Floating Glass) */}
       <div className="fixed left-4 bottom-6 z-50 flex md:hidden">
         <a
-          href="https://wa.me/919513060525"
+          href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Physiotherapy%20Team%2C%0AI%20would%20like%20to%20book%20an%20appointment%20or%20enquire%20about%20your%20physiotherapy%20services.%0APlease%20guide%20me%20with%20available%20slots%20and%20consultation%20details.%0AThank%20you."
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)]"
@@ -47,7 +47,7 @@ export function StickyContactWidget() {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/919513060525"
+          href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Physiotherapy%20Team%2C%0AI%20would%20like%20to%20book%20an%20appointment%20or%20enquire%20about%20your%20physiotherapy%20services.%0APlease%20guide%20me%20with%20available%20slots%20and%20consultation%20details.%0AThank%20you."
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center w-16 h-16 rounded-2xl bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)]"
