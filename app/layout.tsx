@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'verification_token',
+    google: 'OFHG23dGA55typX18pDGBuiGlWa_eCt69AnCZZlfA5U',
   },
   icons: {
     icon: '/images/logo.png',
