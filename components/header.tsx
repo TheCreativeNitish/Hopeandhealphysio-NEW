@@ -67,7 +67,7 @@ export function Header() {
               <Youtube className="h-4 w-4" />
               <span className="hidden sm:inline">YouTube</span>
             </a>
-            <a href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Physiotherapy%20Team%2C%0AI%20would%20like%20to%20book%20an%20appointment%20or%20enquire%20about%20your%20physiotherapy%20services.%0APlease%20guide%20me%20with%20available%20slots%20and%20consultation%20details.%0AThank%20you." className="flex items-center gap-1 transition hover:text-orange-400" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Team%2C%0AI%20would%20like%20to%20schedule%20an%20appointment.%20Kindly%20share%20available%20slots%20and%20consultation%20details." className="flex items-center gap-1 transition hover:text-orange-400" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <MessageCircle className="h-4 w-4" />
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
@@ -159,7 +159,7 @@ export function Header() {
                   Call Now
                 </a>
                 <a
-                  href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Physiotherapy%20Team%2C%0AI%20would%20like%20to%20book%20an%20appointment%20or%20enquire%20about%20your%20physiotherapy%20services.%0APlease%20guide%20me%20with%20available%20slots%20and%20consultation%20details.%0AThank%20you."
+                  href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Team%2C%0AI%20would%20like%20to%20schedule%20an%20appointment.%20Kindly%20share%20available%20slots%20and%20consultation%20details."
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg bg-whatsapp px-4 py-3 text-base font-bold text-white transition hover:bg-whatsapp/90 mb-3"

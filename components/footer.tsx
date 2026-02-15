@@ -131,7 +131,7 @@ export function Footer() {
           <p className="mt-3 text-white/80">Book your appointment today and take the first step towards a pain-free life</p>
           <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <a
-              href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Physiotherapy%20Team%2C%0AI%20would%20like%20to%20book%20an%20appointment%20or%20enquire%20about%20your%20physiotherapy%20services.%0APlease%20guide%20me%20with%20available%20slots%20and%20consultation%20details.%0AThank%20you."
+              href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Team%2C%0AI%20would%20like%20to%20schedule%20an%20appointment.%20Kindly%20share%20available%20slots%20and%20consultation%20details."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-full bg-white px-6 sm:px-8 py-3 sm:py-3.5 font-bold text-sm sm:text-base text-slate-900 shadow-lg transition-all hover:scale-105 w-full sm:w-auto"

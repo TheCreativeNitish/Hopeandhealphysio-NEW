@@ -223,7 +223,7 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center items-center w-full px-2">
               <a
-                href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Physiotherapy%20Team%2C%0AI%20would%20like%20to%20book%20an%20appointment%20or%20enquire%20about%20your%20physiotherapy%20services.%0APlease%20guide%20me%20with%20available%20slots%20and%20consultation%20details.%0AThank%20you."
+                href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Team%2C%0AI%20would%20like%20to%20schedule%20an%20appointment.%20Kindly%20share%20available%20slots%20and%20consultation%20details."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-full bg-teal-500/80 hover:bg-teal-500 px-6 sm:px-8 py-2.5 sm:py-3 font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
