@@ -43,11 +43,11 @@ export function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm">
           {/* Left: Phone and Email */}
           <div className="flex flex-col items-start gap-1.5 sm:gap-3 lg:flex-row lg:items-center lg:gap-6">
-            <a href="tel:+919513060525" className="flex items-center gap-1.5 sm:gap-2 transition hover:text-orange-400">
+            <a href="tel:+919513060525" className="flex items-center gap-1.5 sm:gap-2 transition hover:text-orange-400 text-white">
               <Phone className="h-4 w-4 flex-shrink-0" />
               <span>+91 95130 60525</span>
             </a>
-            <a href="mailto:1488neha@gmail.com" className="flex items-center gap-1.5 sm:gap-2 transition hover:text-orange-400">
+            <a href="mailto:1488neha@gmail.com" className="flex items-center gap-1.5 sm:gap-2 transition hover:text-orange-400 text-white">
               <Mail className="h-4 w-4 flex-shrink-0" />
               <span>1488neha@gmail.com</span>
             </a>
@@ -55,19 +55,19 @@ export function Header() {
 
           {/* Right: Social Links */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-            <a href="https://www.facebook.com/people/HopeHeal-Physiotherapy-Clinic/100063745584977/" className="flex items-center gap-1 transition hover:text-orange-400" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/people/HopeHeal-Physiotherapy-Clinic/100063745584977/" className="flex items-center gap-1 transition hover:text-orange-400 text-white" target="_blank" rel="noreferrer" aria-label="Facebook">
               <Facebook className="h-4 w-4" />
               <span className="hidden sm:inline">Facebook</span>
             </a>
-            <a href="https://www.instagram.com/cuppingwithneha/reels/" className="flex items-center gap-1 transition hover:text-orange-400" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/cuppingwithneha/reels/" className="flex items-center gap-1 transition hover:text-orange-400 text-white" target="_blank" rel="noreferrer" aria-label="Instagram">
               <Instagram className="h-4 w-4" />
               <span className="hidden sm:inline">Instagram</span>
             </a>
-            <a href="https://m.youtube.com/%40synchroself?fbclid=PAb21jcAPv1idleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadQm6zp2jtKMBQCXyOBD5KoC9V6FnCcGOrpyasyEx27R2xwtrDZkhM8jl4xwQ_aem_H1jfW_nNthqsru0kzq12vA" className="flex items-center gap-1 transition hover:text-orange-400" target="_blank" rel="noreferrer" aria-label="YouTube">
+            <a href="https://m.youtube.com/%40synchroself?fbclid=PAb21jcAPv1idleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadQm6zp2jtKMBQCXyOBD5KoC9V6FnCcGOrpyasyEx27R2xwtrDZkhM8jl4xwQ_aem_H1jfW_nNthqsru0kzq12vA" className="flex items-center gap-1 transition hover:text-orange-400 text-white" target="_blank" rel="noreferrer" aria-label="YouTube">
               <Youtube className="h-4 w-4" />
               <span className="hidden sm:inline">YouTube</span>
             </a>
-            <a href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Team%2C%0AI%20would%20like%20to%20schedule%20an%20appointment.%20Kindly%20share%20available%20slots%20and%20consultation%20details." className="flex items-center gap-1 transition hover:text-orange-400" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/919513060525?text=Hello%20Hope%20%26%20Heal%20Team%2C%0AI%20would%20like%20to%20schedule%20an%20appointment.%20Kindly%20share%20available%20slots%20and%20consultation%20details." className="flex items-center gap-1 transition hover:text-orange-400 text-white" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <MessageCircle className="h-4 w-4" />
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
@@ -107,7 +107,10 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-semibold transition hover:text-primary ${pathname === item.href ? "text-primary border-b-2 border-primary" : "text-foreground"
+
+                className={`text-sm font-bold px-4 py-2 rounded-full transition-all duration-200 ${pathname === item.href
+                  ? "bg-secondary text-white shadow-md hover:shadow-lg"
+                  : "text-foreground hover:bg-secondary/10 hover:text-secondary"
                   }`}
               >
                 {item.name}
@@ -140,7 +143,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={`block rounded-lg border px-4 py-3 text-base font-semibold transition hover:bg-muted ${pathname === item.href
-                    ? "border-primary bg-primary/5 text-primary"
+                    ? "border-secondary bg-secondary/5 text-secondary"
                     : "border-border text-foreground"
                     }`}
                   onClick={closeMobileMenu}

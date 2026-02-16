@@ -22,7 +22,11 @@ const animationStyles = `
     animation: slideInFromRight 1s ease-out forwards;
   }
   .hero-title {
-    color: #ff5252;
+    color: #f5b400;
+    background: none;
+    -webkit-text-fill-color: initial;
+    -webkit-background-clip: initial;
+    background-clip: initial;
     font-weight: 900;
     letter-spacing: 0.04em;
     -webkit-text-stroke: 1.5px #1a1a1a;
@@ -31,7 +35,7 @@ const animationStyles = `
       2px 2px 0px #000000,
       4px 4px 0px rgba(0, 0, 0, 0.7),
       6px 6px 15px rgba(0, 0, 0, 0.8),
-      0 0 30px rgba(255, 82, 82, 0.4);
+      0 0 30px rgba(245, 180, 0, 0.4);
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
   }
 `
@@ -211,8 +215,11 @@ export function HeroSection() {
             {/* Heading */}
             <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-[0.02em] mb-6 hero-title">
               <span className="block">GET THE BEST PHYSIOTHERAPY</span>
-              <span className="block">TREATMENT AT "HOPE AND HEAL"</span>
-              <span className="block text-base sm:text-2xl md:text-3xl mt-2 font-normal">- BANGALORE -</span>
+              <span className="block">
+                <span>TREATMENT AT </span>
+                <span className="text-white">"HOPE AND HEAL"</span>
+              </span>
+              <span className="block text-base sm:text-2xl md:text-3xl mt-2 font-normal">– BANGALORE –</span>
             </h1>
 
             {/* Description */}
