@@ -368,6 +368,114 @@
   .animate-delay-4 { animation-delay: 0.4s; }
 }
 
+/* ============================================================
+   Desktop Navbar Styles — applies only at min-width: 1024px
+   ============================================================ */
+@media (min-width: 1024px) {
+
+  /* ── Center nav block: absolute centering relative to navbar container ── */
+  .desktop-nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    /* container itself has no background/padding so it can't block logo/CTA clicks */
+    pointer-events: none;
+  }
+
+  /* Re-enable pointer events on the actual links */
+  .desktop-nav-center .desktop-nav-link {
+    pointer-events: auto;
+  }
+
+  /* ── Nav link: reset all inherited anchor styles, add underline indicator ── */
+  .desktop-nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    align-self: center;          /* vertically centers within parent flex row  */
+    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;            /* consistent line-height, no inherited shift  */
+    color: var(--foreground);
+    padding: 6px 0;
+    text-decoration: none !important;
+    text-underline-offset: unset; /* reset global a { text-underline-offset }   */
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0;                   /* kill any inherited margin from a/p/h tags  */
+    transition: color 0.2s ease;
+  }
+
+  /* Animated underline indicator */
+  .desktop-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    border-radius: 1px;
+    transition: width 0.25s ease;
+  }
+
+  .desktop-nav-link:hover {
+    color: var(--secondary) !important;
+    background: transparent !important;
+  }
+
+  .desktop-nav-link:hover::after {
+    width: 100%;
+  }
+
+  .desktop-nav-link.is-active {
+    color: var(--secondary) !important;
+    font-weight: 700;
+  }
+
+  .desktop-nav-link.is-active::after {
+    width: 100%;
+  }
+
+  /* ── Location icon: vertically centered, no stray spacing ── */
+  .desktop-location-icon {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    flex-shrink: 0;
+    padding: 4px;
+    margin: 0;
+    color: var(--primary);
+    transition: color 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .desktop-location-icon:hover {
+    color: var(--secondary);
+  }
+
+  /* ── CTA button: pill with depth, vertically centered ── */
+  .desktop-cta-btn {
+    align-self: center;
+    flex-shrink: 0;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 14px rgba(52, 152, 219, 0.35);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+    margin: 0;
+  }
+
+  .desktop-cta-btn:hover {
+    background-color: #2980b9 !important;
+    box-shadow: 0 6px 18px rgba(52, 152, 219, 0.45);
+    transform: scale(1.02) !important;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

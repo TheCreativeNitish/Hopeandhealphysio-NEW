@@ -77,11 +77,11 @@ export function Header() {
 
       {/* Main Navigation */}
       <nav className="border-b border-border bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-3 sm:px-4 py-3 sm:py-4">
+        <div className="mx-auto flex max-w-[min(1280px,92vw)] items-center justify-between px-3 sm:px-4 lg:px-8 py-3 sm:py-4 lg:py-3 lg:relative">
           <Logo size="md" />
 
+          {/* Mobile: location icon + hamburger */}
           <div className="flex lg:hidden items-center gap-2">
-            {/* Location Icon - Mobile View - Right Side */}
             <a
               href="https://www.google.com/maps/place/Hope%26Heal+Physiotherapy+Clinic+An+Advance+and+Best+Clinic+%26+Home+Visits+near+me+in+Ramamurthy+nagar/@13.0109938,77.6786868,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae11666cd7e741:0x60ce02a4bbe1ebd5!8m2!3d13.0109938!4d77.6786868!16s%2Fg%2F11t_0k0yjr"
               target="_blank"
@@ -102,32 +102,32 @@ export function Header() {
             </button>
           </div>
 
-          <div className="hidden lg:flex lg:items-center lg:gap-8">
+          {/* Desktop Center: Navigation links — absolutely centered */}
+          <div className="desktop-nav-center hidden lg:flex">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-
-                className={`text-sm font-bold px-4 py-2 rounded-full transition-all duration-200 ${pathname === item.href
-                  ? "bg-secondary text-white shadow-md hover:shadow-lg"
-                  : "text-foreground hover:bg-secondary/10 hover:text-secondary"
-                  }`}
+                className={`desktop-nav-link${pathname === item.href ? " is-active" : ""}`}
               >
                 {item.name}
               </Link>
             ))}
-            {/* Location Icon - Desktop */}
+          </div>
+
+          {/* Desktop Right: Location icon + CTA */}
+          <div className="hidden lg:flex lg:items-center lg:gap-6">
             <a
               href="https://www.google.com/maps/place/Hope%26Heal+Physiotherapy+Clinic+An+Advance+and+Best+Clinic+%26+Home+Visits+near+me+in+Ramamurthy+nagar/@13.0109938,77.6786868,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae11666cd7e741:0x60ce02a4bbe1ebd5!8m2!3d13.0109938!4d77.6786868!16s%2Fg%2F11t_0k0yjr"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-full p-2 transition hover:bg-primary/10"
+              className="desktop-location-icon"
               aria-label="View location on map"
               title="View location on map"
             >
-              <MapPin className="h-5 w-5 text-primary" />
+              <MapPin className="h-[18px] w-[18px]" />
             </a>
-            <BookAppointmentButton size="sm" />
+            <BookAppointmentButton size="sm" className="desktop-cta-btn" />
           </div>
         </div>
       </nav>

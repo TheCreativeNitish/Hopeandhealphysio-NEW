@@ -23,7 +23,7 @@ export function BookAppointmentButton({
   const baseStyles = "inline-flex items-center justify-center gap-2 font-bold rounded-full transition-all"
 
   const variantStyles = {
-    primary: "bg-secondary text-white shadow-lg hover:shadow-xl hover:scale-105",
+    primary: "bg-secondary text-white shadow-md hover:shadow-lg hover:scale-[1.02]",
     secondary: "bg-primary text-white shadow-lg hover:shadow-xl hover:scale-105",
     outline: "border-2 border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white/20",
     ghost: "text-primary hover:text-primary/80",
