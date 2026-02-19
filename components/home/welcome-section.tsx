@@ -69,7 +69,7 @@ export function WelcomeSection() {
                 Expert Physiotherapists
               </h4>
               <p className="text-foreground/70 text-base">
-                B.P.T, MIAP, Certified Cupping, Dry Needling, Manual & IASTM Therapist
+                B.P.T, MIAP, Certified Cupping, Dry Needling, & Manual Therapist
               </p>
             </div>
 

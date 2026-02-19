@@ -9,7 +9,7 @@ import { useAppointmentModal } from "@/contexts/appointment-modal-context"
 
 const services = [
     {
-        image: "https://ik.imagekit.io/dvl5mhvik/premium_photo-1661672215321-e67893b20059.avif",
+        image: "/services/electro-therapy.jpg",
         icon: "⚡",
         title: "Electrotherapy",
         description: "Advanced modalities including IFT, UST, TENS, Laser, and Deep Heat for pain relief and healing.",
@@ -23,25 +23,25 @@ const services = [
         detailedDescription: "Manual Therapy involves skilled hand movements and skilled passive movements of joints and soft tissue. Our specialists are trained in advanced techniques such as joint mobilization, manipulation, and myofascial release. \n\nThis hands-on approach is designed to induce relaxation, increase range of motion, and reduce pain. \n\nIt is particularly beneficial for stiff joints, frozen shoulder, neck pain, and back issues. We believe in the power of touch to heal and restore mechanical function to the body.",
     },
     {
-        image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=800&fit=max",
+        image: "/services/dry-needle.png",
         icon: "💉",
         title: "Dry Needling Therapy",
         description: "Specialized technique using thin needles to release muscle knots and treat chronic pain.",
         detailedDescription: "Dry Needling is a specialized technique that uses thin monofilament needles to treat trigger points—knots in the muscle that cause pain and dysfunction. \n\nUnlike acupuncture, which focuses on energy flow, dry needling is based on Western anatomical and neurophysiological principles. \n\nIt effectively releases muscle tension, reduces pain signals, and promotes biochemical healing. It is highly effective for chronic pain syndromes, tension headaches, and overuse injuries.",
     },
     {
-        image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?q=80&w=800&fit=max",
+        image: "/services/cupping-therapy.jpg",
         icon: "🧘",
         title: "Cupping Therapy",
         description: "Ancient therapeutic technique using suction cups to improve blood flow and relieve muscle tension.",
         detailedDescription: "Cupping therapy is an ancient form of alternative medicine in which a therapist puts special cups on your skin for a few minutes to create suction. \n\nWe use it to help with pain, inflammation, blood flow, relaxation and well-being, and as a type of deep-tissue massage. \n\nThe suction and negative pressure provided by cupping can loosen muscles, encourage blood flow, and sedate the nervous system (which makes it an excellent treatment for high blood pressure).",
     },
     {
-        image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&fit=max",
-        icon: "🔧",
-        title: "IASTM Therapy",
-        description: "Instrument Assisted Soft Tissue Mobilization to break down scar tissue and fascial restrictions.",
-        detailedDescription: "IASTM (Instrument Assisted Soft Tissue Mobilization) involves using specialized instruments to massage and mobilize muscles, fascia, and tendons. \n\nIt effectively breaks down scar tissue and fascial restrictions, stimulating the body's natural healing response. \n\nThis technique is excellent for treating chronic tendinopathies, plantar fasciitis, and post-surgical scar tissue, helping to restore normal tissue texture and function.",
+        image: "/services/dry-needle.png",
+        icon: "💉",
+        title: "Dry Needle Therapy",
+        description: "Specialized technique using thin needles to release muscle knots and treat chronic pain.",
+        detailedDescription: "Dry Needle Therapy is a specialized technique that uses thin monofilament needles to treat trigger points—knots in the muscle that cause pain and dysfunction. \n\nIt effectively releases muscle tension, reduces pain signals, and promotes biochemical healing. It is highly effective for chronic pain syndromes, tension headaches, and overuse injuries.",
     },
     {
         image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&fit=max",
@@ -122,7 +122,7 @@ export function ServicesPageClient({ jsonLdData }: { jsonLdData: any }) {
                 <section className="relative overflow-hidden bg-teal-600 py-16 sm:py-20 md:py-24 lg:py-28">
                     {/* Gradient overlay */}
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800" />
-                    
+
                     {/* Radial glow */}
                     <div className="pointer-events-none absolute inset-0">
                         <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-400/10 blur-3xl" />

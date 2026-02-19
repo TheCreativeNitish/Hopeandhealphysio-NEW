@@ -6,7 +6,7 @@ import { ServiceDetailModal } from "./service-detail-modal"
 
 const services = [
   {
-    image: "https://ik.imagekit.io/dvl5mhvik/premium_photo-1661672215321-e67893b20059.avif",
+    image: "/services/electro-therapy.jpg",
     icon: "⚡",
     title: "Electrotherapy",
     description: "Advanced modalities including IFT, UST, TENS, Laser, and Deep Heat for pain relief and healing.",
@@ -22,7 +22,7 @@ const services = [
     href: "#"
   },
   {
-    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=800&fit=max",
+    image: "/services/dry-needle.png",
     icon: "💉",
     title: "Dry Needling Therapy",
     description: "Specialized technique using thin needles to release muscle knots and treat chronic pain.",
@@ -30,7 +30,7 @@ const services = [
     href: "#"
   },
   {
-    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?q=80&w=800&fit=max",
+    image: "/services/cupping-therapy.jpg",
     icon: "🧘",
     title: "Cupping Therapy",
     description: "Ancient therapeutic technique using suction cups to improve blood flow and relieve muscle tension.",
@@ -38,11 +38,11 @@ const services = [
     href: "#"
   },
   {
-    image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&fit=max",
-    icon: "🔧",
-    title: "IASTM Therapy",
-    description: "Instrument Assisted Soft Tissue Mobilization to break down scar tissue and fascial restrictions.",
-    detailedDescription: "IASTM (Instrument Assisted Soft Tissue Mobilization) involves using specialized instruments to massage and mobilize muscles, fascia, and tendons. \n\nIt effectively breaks down scar tissue and fascial restrictions, stimulating the body's natural healing response. \n\nThis technique is excellent for treating chronic tendinopathies, plantar fasciitis, and post-surgical scar tissue, helping to restore normal tissue texture and function.",
+    image: "/services/dry-needle.png",
+    icon: "💉",
+    title: "Dry Needle Therapy",
+    description: "Specialized technique using thin needles to release muscle knots and treat chronic pain.",
+    detailedDescription: "Dry Needle Therapy is a specialized technique that uses thin monofilament needles to treat trigger points—knots in the muscle that cause pain and dysfunction. \n\nIt effectively releases muscle tension, reduces pain signals, and promotes biochemical healing. It is highly effective for chronic pain syndromes, tension headaches, and overuse injuries.",
     href: "#"
   },
   {
@@ -67,6 +67,19 @@ export function ServicesSection() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+        {/* Intro Video */}
+        <div className="w-full max-w-4xl mx-auto mb-16 rounded-2xl overflow-hidden shadow-2xl fade-in">
+          <video
+            src="/youtube video/videoplayback (1).mp4"
+            className="w-full h-auto"
+            controls
+            playsInline
+            preload="metadata"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
         {/* Section Header */}
         <div className="mb-12 text-center fade-in">
           <span className="inline-block rounded-full bg-teal-600/10 px-6 py-2 text-sm font-bold uppercase tracking-wider text-teal-600 mb-4">

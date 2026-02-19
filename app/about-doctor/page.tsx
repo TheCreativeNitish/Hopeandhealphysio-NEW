@@ -28,8 +28,7 @@ export default function AboutDoctorPage() {
         "MIAP (Member of Indian Association of Physiotherapists)",
         "Certified Cupping Therapist",
         "Certified Dry Needling Therapist",
-        "Certified Manual Therapist",
-        "Certified IASTM Therapist"
+        "Certified Manual Therapist"
     ]
 
     const coreValues = [

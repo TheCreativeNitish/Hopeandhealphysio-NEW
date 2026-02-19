@@ -21,8 +21,7 @@ export function AppointmentBookingModal() {
     email: "",
     phone: "",
     service: "",
-    preferredDate: "",
-    preferredTime: "",
+
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -64,70 +63,15 @@ export function AppointmentBookingModal() {
       return
     }
 
-    // Availability Check
-    if (formData.preferredDate && formData.preferredTime) {
-      try {
-        const checkResponse = await fetch(
-          "https://script.google.com/macros/s/AKfycbzTEJrBSktGVt66fU32QXx9Oi3tgOrjg4rQbsImUI70pcOu41Qby2h-1FzAhl87zbkFJQ/exec"
-        )
-        const checkResult = await checkResponse.json()
 
-        if (checkResult.status === "success" && Array.isArray(checkResult.data)) {
-          interface Appointment {
-            appointmentDate: string
-            timeSlot: string
-          }
-          const isTaken = checkResult.data.some((apt: Appointment) => {
-            if (!apt.appointmentDate || !apt.timeSlot) return false
-
-            // Compare Date
-            // API now returns display values (strings) from sheet
-            const aptDate = new Date(apt.appointmentDate)
-            const selectedDate = new Date(formData.preferredDate)
-
-            if (isNaN(aptDate.getTime()) || isNaN(selectedDate.getTime())) return false
-
-            const isSameDate = (
-              aptDate.getDate() === selectedDate.getDate() &&
-              aptDate.getMonth() === selectedDate.getMonth() &&
-              aptDate.getFullYear() === selectedDate.getFullYear()
-            )
-
-            if (!isSameDate) return false
-
-            // Compare Time (String Match)
-            // Existing: "14:30" or "14:30:00"
-            // Selected: "14:30"
-            let t1 = (apt.timeSlot || "").toString().trim()
-            let t2 = formData.preferredTime.toString().trim()
-
-            if (t1.length > 5) t1 = t1.substring(0, 5)
-            if (t2.length > 5) t2 = t2.substring(0, 5)
-
-            return t1 === t2
-          })
-
-          if (isTaken) {
-            setError("This time slot is already booked. Please choose another time.")
-            setIsSubmitting(false)
-            return
-          }
-        }
-      } catch (checkErr) {
-        console.error("Availability check failed:", checkErr)
-        // Optionally allow proceeding if check fails, or block. 
-        // Blocking is safer for "Conflict Detection" feature.
-      }
-    }
 
     try {
+      const serviceLabel = services.find(s => s.value === formData.service)?.label || formData.service
       const payload = {
         fullName: `${formData.firstName} ${formData.lastName}`,
         phoneNumber: formData.phone,
         email: formData.email,
-        appointmentDate: formData.preferredDate,
-        preferredTime: formData.preferredTime,
-        reason: `${formData.service}${formData.message ? ` - ${formData.message}` : ""}`,
+        reason: formData.message ? `${serviceLabel}: ${formData.message}` : serviceLabel,
       }
 
       await fetch(
@@ -149,8 +93,7 @@ export function AppointmentBookingModal() {
         email: "",
         phone: "",
         service: "",
-        preferredDate: "",
-        preferredTime: "",
+
         message: "",
       })
 
@@ -298,33 +241,7 @@ export function AppointmentBookingModal() {
                 </select>
               </div>
 
-              {/* Preferred Date & Time */}
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-sm font-semibold text-foreground">
-                    Preferred Date
-                  </label>
-                  <input
-                    type="date"
-                    name="preferredDate"
-                    value={formData.preferredDate}
-                    onChange={handleChange}
-                    className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-2.5 text-foreground transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground">
-                    Preferred Time
-                  </label>
-                  <input
-                    type="time"
-                    name="preferredTime"
-                    value={formData.preferredTime}
-                    onChange={handleChange}
-                    className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-2.5 text-foreground transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  />
-                </div>
-              </div>
+
 
               {/* Additional Message */}
               <div>

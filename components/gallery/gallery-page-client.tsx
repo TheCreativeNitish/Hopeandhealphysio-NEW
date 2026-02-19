@@ -7,49 +7,60 @@ import { MapPin, Calendar } from "lucide-react"
 
 const galleryImages = [
     {
-        src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&fit=max",
-        category: "Clinic Interior",
-        alt: "Modern Clinic Waiting Area"
-    },
-    {
-        src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&fit=max",
-        category: "Treatment Room",
-        alt: "Private Treatment Room"
-    },
-    {
-        src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&fit=max",
-        category: "Equipment",
-        alt: "Exercise Equipment"
-    },
-    {
-        src: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&fit=max",
+        src: "/gallery/gallery-1.png",
         category: "Therapy",
-        alt: "Physiotherapy Session"
+        alt: "Personalized Physiotherapy Session",
+        position: "center"
     },
     {
-        src: "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?q=80&w=800&fit=max",
-        category: "Therapy Session",
-        alt: "Patient Rehabilitation Treatment"
+        src: "/gallery/gallery-2.png",
+        category: "Patient Care",
+        alt: "Compassionate Care for Seniors",
+        position: "top"
     },
     {
-        src: "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=800&fit=max",
-        category: "Clinic Facilities",
-        alt: "Modern Physiotherapy Clinic Interior"
-    },
-    {
-        src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&fit=max",
-        category: "Treatment",
-        alt: "Professional Physiotherapy Treatment"
-    },
-    {
-        src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&fit=max",
+        src: "/gallery/gallery-3.jpg",
         category: "Recovery",
-        alt: "Patient Recovery and Rehabilitation"
+        alt: "Happy Patients and Successful Recovery",
+        position: "top"
     },
     {
-        src: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800&fit=max",
+        src: "/gallery/gallery-4.jpg",
+        category: "Treatment",
+        alt: "Specialized Facial Physiotherapy",
+        position: "center"
+    },
+    {
+        src: "/gallery/gallery-5.jpg",
+        category: "Therapy",
+        alt: "Advanced Cupping Therapy Session",
+        position: "center"
+    },
+    {
+        src: "/gallery/clinic-ext.png",
+        category: "Clinic Exterior",
+        alt: "Hope and Heal Clinic Entrance",
+        position: "center"
+    },
+    {
+        src: "/gallery/home-visits.png",
+        category: "Services",
+        alt: "Physiotherapy at Home Services",
+        fit: "contain",
+        position: "center"
+    },
+    {
+        src: "/gallery/room-setup.png",
         category: "Clinic Space",
-        alt: "Spacious Treatment Area"
+        alt: "Modern Treatment Room Setup",
+        position: "center"
+    },
+    {
+        src: "/gallery/knee-care.jpg",
+        category: "Recovery",
+        alt: "Treatment for Knee Pain",
+        fit: "contain",
+        position: "center"
     }
 ]
 
@@ -80,7 +91,11 @@ export function GalleryPageClient() {
                                     <img
                                         src={img.src}
                                         alt={img.alt}
-                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        style={{
+                                            objectPosition: (img as any).position || 'center',
+                                            objectFit: (img as any).fit || 'cover'
+                                        }}
+                                        className="h-full w-full transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="absolute bottom-0 left-0 p-6">
@@ -104,7 +119,7 @@ export function GalleryPageClient() {
                                 <p className="text-teal-50 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
                                     Experience our state-of-the-art facilities and meet our expert team. We maintain the highest standards of hygiene and patient care.
                                 </p>
-                                
+
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto">
                                     <a
                                         href="https://www.google.com/maps/place/Hope%26Heal+Physiotherapy+Clinic+An+Advance+and+Best+Clinic+%26+Home+Visits+near+me+in+Ramamurthy+nagar/@13.0109938,77.6786868,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae11666cd7e741:0x60ce02a4bbe1ebd5!8m2!3d13.0109938!4d77.6786868!16s%2Fg%2F11t_0k0yjr"
