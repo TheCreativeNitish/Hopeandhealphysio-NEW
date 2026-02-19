@@ -46,7 +46,7 @@ const services = [
     href: "#"
   },
   {
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&fit=max",
+    image: "/services/sports-rehab.jpg",
     icon: "🏃",
     title: "Exercise & Sports Rehab",
     description: "Customized exercise programs for sports injuries, post-surgery recovery, and functional strength.",

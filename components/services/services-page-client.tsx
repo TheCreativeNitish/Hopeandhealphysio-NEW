@@ -44,7 +44,7 @@ const services = [
         detailedDescription: "Dry Needle Therapy is a specialized technique that uses thin monofilament needles to treat trigger points—knots in the muscle that cause pain and dysfunction. \n\nIt effectively releases muscle tension, reduces pain signals, and promotes biochemical healing. It is highly effective for chronic pain syndromes, tension headaches, and overuse injuries.",
     },
     {
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&fit=max",
+        image: "/services/sports-rehab.jpg",
         icon: "🏃",
         title: "Exercise & Sports Rehab",
         description: "Customized exercise programs for sports injuries, post-surgery recovery, and functional strength.",
