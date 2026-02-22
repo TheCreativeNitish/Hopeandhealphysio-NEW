@@ -7,6 +7,12 @@ import { MapPin, Calendar } from "lucide-react"
 
 const galleryImages = [
     {
+        src: "/gallery/consultation-gallery.jpg",
+        category: "Consultation",
+        alt: "Patient Consultation",
+        position: "center"
+    },
+    {
         src: "/gallery/gallery-1.png",
         category: "Therapy",
         alt: "Personalized Physiotherapy Session",
@@ -60,6 +66,12 @@ const galleryImages = [
         category: "Recovery",
         alt: "Treatment for Knee Pain",
         fit: "contain",
+        position: "center"
+    },
+    {
+        src: "/gallery/cupping-therapy-gallery.jpg",
+        category: "Therapy",
+        alt: "Advanced Cupping Therapy Treatment",
         position: "center"
     }
 ]

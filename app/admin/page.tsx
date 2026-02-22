@@ -1,4 +1,4 @@
-"use client"
+  "use client"
 
 import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
@@ -14,6 +14,7 @@ interface AppointmentData {
     appointmentDate: string
     timeSlot: string
     reason: string
+    
 }
 
 interface DashboardStats {

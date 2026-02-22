@@ -16,7 +16,7 @@ const services = [
         detailedDescription: "Electrotherapy is a cornerstone of modern physiotherapy for pain management and muscle re-education. We utilize state-of-the-art modality equipment including TENS (Transcutaneous Electrical Nerve Stimulation), IFT (Interferential Therapy), Ultrasound therapy, and High-Intensity Laser. \n\nThese non-invasive treatments help reduce inflammation, alleviate pain, improve circulation, and stimulate muscle repair without medication. \n\nIt is highly effective for conditions like arthritis, back pain, and sports injuries, providing immediate relief and accelerating the natural healing process.",
     },
     {
-        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&fit=max",
+        image: "/services/manual-therapy.jpg",
         icon: "🤲",
         title: "Manual Therapy",
         description: "Skilled hand movements to mobilize joints and soft tissues, reducing pain and improving range of motion.",
@@ -35,13 +35,6 @@ const services = [
         title: "Cupping Therapy",
         description: "Ancient therapeutic technique using suction cups to improve blood flow and relieve muscle tension.",
         detailedDescription: "Cupping therapy is an ancient form of alternative medicine in which a therapist puts special cups on your skin for a few minutes to create suction. \n\nWe use it to help with pain, inflammation, blood flow, relaxation and well-being, and as a type of deep-tissue massage. \n\nThe suction and negative pressure provided by cupping can loosen muscles, encourage blood flow, and sedate the nervous system (which makes it an excellent treatment for high blood pressure).",
-    },
-    {
-        image: "/services/dry-needle.png",
-        icon: "💉",
-        title: "Dry Needle Therapy",
-        description: "Specialized technique using thin needles to release muscle knots and treat chronic pain.",
-        detailedDescription: "Dry Needle Therapy is a specialized technique that uses thin monofilament needles to treat trigger points—knots in the muscle that cause pain and dysfunction. \n\nIt effectively releases muscle tension, reduces pain signals, and promotes biochemical healing. It is highly effective for chronic pain syndromes, tension headaches, and overuse injuries.",
     },
     {
         image: "/services/sports-rehab.jpg",
