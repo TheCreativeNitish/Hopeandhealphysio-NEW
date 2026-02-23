@@ -18,8 +18,29 @@ const animationStyles = `
       transform: translateX(0);
     }
   }
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    80% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+  }
   .animate-slide-in {
     animation: slideInFromRight 1s ease-out forwards;
+  }
+  .hero-text-rotate {
+    animation: fadeSlideUp 5s ease-in-out;
   }
   .hero-title {
     color: #f5b400;
@@ -93,6 +114,7 @@ export function HeroSection() {
   const [isHovered, setIsHovered] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const [textIndex, setTextIndex] = useState(0)
 
   // Select images based on device type
   const heroImages = isMobile ? mobileHeroImages : desktopHeroImages
@@ -116,6 +138,14 @@ export function HeroSection() {
       return () => clearInterval(interval)
     }
   }, [isHovered, nextSlide])
+
+  // Text rotation functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prev) => (prev + 1) % 2)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
 
   // Touch handlers for mobile swipe
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -186,21 +216,6 @@ export function HeroSection() {
           </>
         )}
 
-        {/* Slide Indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all ${index === currentSlide
-                ? "w-8 bg-white"
-                : "w-2 bg-white/50 hover:bg-white/75"
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-
         {/* Content Container */}
         <div className="absolute inset-0 flex items-center justify-center z-10 px-3 sm:px-6 md:px-8">
           <div className="w-full max-w-4xl text-center">
@@ -213,13 +228,25 @@ export function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-[0.02em] mb-6 hero-title">
-              <span className="block">GET THE BEST PHYSIOTHERAPY</span>
-              <span className="block">
-                <span>TREATMENT AT </span>
-                <span className="text-white">"HOPE AND HEAL"</span>
+            <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-[0.02em] mb-6 hero-title relative min-h-[120px] sm:min-h-[180px] md:min-h-[220px] flex items-center justify-center">
+              <span key={textIndex} className="hero-text-rotate block">
+                {textIndex === 0 ? (
+                  <>
+                    <span className="block">GET THE BEST PHYSIOTHERAPY</span>
+                    <span className="block">
+                      <span>TREATMENT AT </span>
+                      <span className="text-white">"HOPE AND HEAL"</span>
+                    </span>
+                    <span className="block text-base sm:text-2xl md:text-3xl mt-2 font-normal">– BANGALORE –</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="block text-white">"HOPE AND HEAL"</span>
+                    <span className="block text-base sm:text-2xl md:text-3xl mt-2 font-normal">Not Just Treatment,</span>
+                    <span className="block text-base sm:text-2xl md:text-3xl font-normal">A Healing Experience.</span>
+                  </>
+                )}
               </span>
-              <span className="block text-base sm:text-2xl md:text-3xl mt-2 font-normal">– BANGALORE –</span>
             </h1>
 
             {/* Description */}
@@ -245,6 +272,21 @@ export function HeroSection() {
                 Book Appointment
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </button>
+            </div>
+
+            {/* Slide Indicators */}
+            <div className="relative mt-5 sm:absolute sm:bottom-8 sm:left-1/2 sm:-translate-x-1/2 sm:mt-0 z-20 flex gap-2 justify-center">
+              {heroImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`h-2 rounded-full transition-all ${index === currentSlide
+                    ? "w-8 bg-white"
+                    : "w-2 bg-white/50 hover:bg-white/75"
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
