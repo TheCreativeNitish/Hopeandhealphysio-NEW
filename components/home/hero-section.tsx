@@ -115,6 +115,7 @@ export function HeroSection() {
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const [textIndex, setTextIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
 
   // Select images based on device type
   const heroImages = isMobile ? mobileHeroImages : desktopHeroImages
@@ -141,10 +142,23 @@ export function HeroSection() {
 
   // Text rotation functionality
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTextIndex((prev) => (prev + 1) % 2)
+    let interval: NodeJS.Timeout
+    
+    // Wait 5 seconds before starting the rotation cycle to prevent initial glitch
+    const startDelay = setTimeout(() => {
+      setIsAnimating(true)
+      setTextIndex(1) // Immediately switch to second text
+      
+      // Start the rotation interval after initial transition
+      interval = setInterval(() => {
+        setTextIndex((prev) => (prev + 1) % 2)
+      }, 5000)
     }, 5000)
-    return () => clearInterval(interval)
+    
+    return () => {
+      clearTimeout(startDelay)
+      if (interval) clearInterval(interval)
+    }
   }, [])
 
   // Touch handlers for mobile swipe
@@ -229,7 +243,7 @@ export function HeroSection() {
 
             {/* Heading */}
             <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-[0.02em] mb-6 hero-title relative min-h-[120px] sm:min-h-[180px] md:min-h-[220px] flex items-center justify-center">
-              <span key={textIndex} className="hero-text-rotate block">
+              <span key={textIndex} className={isAnimating ? "hero-text-rotate block" : "block"}>
                 {textIndex === 0 ? (
                   <>
                     <span className="block">GET THE BEST PHYSIOTHERAPY</span>
@@ -241,9 +255,9 @@ export function HeroSection() {
                   </>
                 ) : (
                   <>
-                    <span className="block text-white">"HOPE AND HEAL"</span>
-                    <span className="block text-base sm:text-2xl md:text-3xl mt-2 font-normal">Not Just Treatment,</span>
-                    <span className="block text-base sm:text-2xl md:text-3xl font-normal">A Healing Experience.</span>
+                    <span className="block text-white font-bold">"HOPE AND HEAL"</span>
+                    <span className="block text-[1.03rem] sm:text-[2.48rem] md:text-[3.15rem] mt-2 font-bold">Not Just Treatment,</span>
+                    <span className="block text-[1.03rem] sm:text-[2.48rem] md:text-[3.15rem] font-bold">A Healing Experience.</span>
                   </>
                 )}
               </span>
