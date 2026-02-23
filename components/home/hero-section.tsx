@@ -255,7 +255,7 @@ export function HeroSection() {
                   </>
                 ) : (
                   <>
-                    <span className="block text-white font-bold">"HOPE AND HEAL"</span>
+                    <span className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-1">"HOPE AND HEAL"</span>
                     <span className="block text-[1.03rem] sm:text-[2.48rem] md:text-[3.15rem] mt-2 font-bold">Not Just Treatment,</span>
                     <span className="block text-[1.03rem] sm:text-[2.48rem] md:text-[3.15rem] font-bold">A Healing Experience.</span>
                   </>
